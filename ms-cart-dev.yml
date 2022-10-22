@@ -4,14 +4,11 @@ server:
 spring:
     
   datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:ms-cart
-    username: sa
-    password: ''
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
   
   h2:
     console:
-      enabled: true
+      enabled: false
       path: /h2-console
   
   jpa:
@@ -27,7 +24,7 @@ spring:
   sql:
     init:
       mode: always
-      platform: h2
+      platform: sql
 
 management:
   endpoints:
@@ -44,7 +41,7 @@ eureka:
 
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-    
+
 resilience4j:
   circuitbreaker:
     configs:
@@ -60,4 +57,7 @@ resilience4j:
         base-config: defecto
         
 configuration:
-    texto: Configurando entorno Defecto actualizado...
+    texto: Configurando entorno Desarrollo ...
+    autor:
+        nombre: Jose Perez
+        email: joseperez@email.com
