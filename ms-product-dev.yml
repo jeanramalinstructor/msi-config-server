@@ -20,6 +20,18 @@ spring:
         '[use_sql_comments]': false
         '[format_sql]': false
     show-sql: true
+    
+  boot:
+    admin:
+      client:
+        enabled: true
+  
+  zipkin:
+    enabled: true
+    sender:
+      type: kafka
+    kafka:
+      topic: zipkin
 
 management:
   endpoints:

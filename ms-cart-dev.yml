@@ -25,6 +25,18 @@ spring:
     init:
       mode: always
       platform: sql
+      
+  boot:
+    admin:
+      client:
+        enabled: true
+  
+  zipkin:
+    enabled: true
+    sender:
+      type: kafka
+    kafka:
+      topic: zipkin
 
 management:
   endpoints:
